@@ -7,16 +7,21 @@ describe Calculator do
   let(:stringified_calculator) { Calculator.new(true) }
   let(:a) { 4 }
   let(:b) { 2 }
+  let(:c) { 1 }
 
   describe "#initialize" do
     it "instantiates a Calculator object" do
-      expect { Calculator.new }.not_to raise_error
+      expect(calculator).to be_an_instance_of(Calculator)
     end
   end
 
   describe "#add" do
     it "adds two numbers correctly" do
       expect(calculator.add(a, b)).to eq(6)
+    end
+
+    it "adds two other numbers correctly" do
+      expect(calculator.add(a, c)).to eq(5)
     end
   end
 
